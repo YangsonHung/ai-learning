@@ -2,39 +2,120 @@
 
 > 🎓 这是一个用于学习前端和 AI 应用开发的项目集合，仅供学习参考使用。
 
+## 🎨 项目预览
+
+### 项目 Logo & 图标
+
+#### 🤖 AI 智能助手 - 主要 Logo
+
+![AI Assistant Logo](coze/src/assets/ai-assistant-logo.svg)
+
+#### 🔖 Favicon - 网站图标
+
+![Favicon](coze/public/favicon.svg)
+
+### 项目界面效果
+
+#### 🤖 Coze AI 智能助手 - 界面预览
+
+![Coze AI Assistant](example-coze.jpg)
+
+##### 基于 Vue 3 + TypeScript + Vite 构建的现代化 AI 对话界面
+
+##### 特色功能
+
+- 🎨 科技风蓝色主题设计
+- ⚡ 精确到毫秒的时间显示
+- 💬 流畅的对话交互体验
+- 📱 PC 端优化的响应式布局
+
+#### 🚀 DeepSeek 项目 - 界面预览
+
+![DeepSeek Project](example-deepseek.jpg)
+
+##### 基于 Vue 3 + Vite 构建的现代化应用框架
+
+##### 项目特色
+
+- 🏗️ 完整的项目结构
+- 🎨 清爽的界面设计
+- ⚡ 快速的开发体验
+- 📚 完善的开发工具配置
+
 ## 📁 项目结构
 
-```
+```text
 ai-learning/
 ├── coze/          # 基于 Coze API 的 AI 助手应用
-├── deepseek/      # 基于 DeepSeek API 的项目（待完善）
+├── deepseek/      # 基于 DeepSeek API 的 AI 对话应用
 └── README.md      # 本文档
 ```
 
 ## 🚀 包含的项目
 
-### 1. coze - AI 助手应用
+### 1. coze - AI 智能助手应用
 
-- **功能**: 基于 Coze API 的智能对话助手
-- **技术栈**: Vue 3 + TypeScript + Vite + pnpm
-- **特点**:
-  - 纯前端单页面应用
-  - 精确的时间显示
+<div align="center">
+
+![AI Assistant Logo](coze/src/assets/ai-assistant-logo.svg)
+
+**基于 Coze API 的现代化智能对话助手**
+
+</div>
+
+- **🎯 核心功能**: 基于 Coze API 的智能对话助手
+- **💻 技术栈**: Vue 3 + TypeScript + Vite + pnpm
+- **🎨 设计特色**:
+  - 自定义机器人 SVG Logo 和 Favicon
+  - Ant Design 风格的科技风蓝色主题
+  - 毛玻璃效果和现代化 UI 设计
+- **⚡ 技术亮点**:
+  - 精确到毫秒的时间显示系统
+  - 纯前端单页面应用（SPA）
   - PC 端优化的响应式设计
   - 优雅的加载状态和错误处理
+  - SVG 图标和渐变背景设计
 
-### 2. deepseek - AI 项目（开发中）
+### 2. deepseek - AI 对话应用 ✅
 
-- **状态**: 项目初始化，待完善
-- **计划**: 基于 DeepSeek API 的 AI 应用
+![DeepSeek Project](example-deepseek.jpg)
+
+- **📊 当前状态**: 开发完成，可正常运行
+- **🎯 核心功能**: 基于 DeepSeek API 的智能对话系统
+- **🛠️ 技术栈**: Vite + Vanilla JavaScript + Prettier
+- **✨ 项目特色**:
+  - 🎨 主题切换系统（亮色/暗色/自动）
+  - 🤖 动态加载 AI 对话模块
+  - 💫 流畅的动画效果和交互体验
+  - 🔧 完整的开发工具配置
+  - 📱 响应式设计，支持多设备访问
+- **🚀 核心特性**:
+  - 实时 AI 对话功能
+  - 主题偏好记忆（LocalStorage）
+  - Toast 通知系统
+  - 模块化代码架构
 
 ## 🛠️ 技术栈
 
-- **前端框架**: Vue 3.5+
-- **类型系统**: TypeScript 5.9+
+### 通用技术
+
 - **构建工具**: Vite 7.1+
 - **包管理器**: pnpm 10.20.0+
-- **代码风格**: ESLint + Prettier
+- **代码风格**: Prettier + ESLint
+- **环境管理**: Node.js 20.19.0+
+
+### 项目专用技术
+
+- **coze 项目**:
+  - Vue 3.5+ (Composition API)
+  - TypeScript 5.9+
+  - SVG 图标设计
+
+- **deepseek 项目**:
+  - Vanilla JavaScript (ES6+)
+  - CSS3 动画
+  - Web Components
+  - LocalStorage API
 
 ## 📦 安装和运行
 
@@ -104,7 +185,7 @@ pnpm lint         # 代码检查和修复
 
 对于需要 API 密钥的项目（如 coze），需要在项目根目录创建 `.env` 文件：
 
-```bash
+```env
 # coze/.env
 VITE_BOT_ID=your_bot_id_here
 VITE_API_KEY=your_api_key_here
@@ -114,36 +195,101 @@ VITE_API_KEY=your_api_key_here
 
 通过这些项目，你可以学习到：
 
-- ✅ Vue 3 Composition API 的使用
-- ✅ TypeScript 类型安全的实践
+### 前端框架与技术
+
+- ✅ Vue 3 Composition API 的使用 (coze)
+- ✅ TypeScript 类型安全的实践 (coze)
+- ✅ Vanilla JavaScript 模块化开发 (deepseek)
+- ✅ 响应式设计和用户体验优化
+
+### 构建与开发工具
+
 - ✅ Vite 现代化构建工具的使用
 - ✅ pnpm 包管理器的最佳实践
-- ✅ AI API 集成和错误处理
-- ✅ 响应式设计和用户体验优化
-- ✅ 代码规范和项目结构组织
+- ✅ Prettier + ESLint 代码规范配置
+- ✅ 热模块替换（HMR）开发体验
+
+### AI 应用集成
+
+- ✅ Coze API 集成和错误处理
+- ✅ DeepSeek API 对话系统实现
+- ✅ 动态模块加载技术
+- ✅ 异步 API 调用最佳实践
+
+### 现代前端开发
+
+- ✅ SVG 图标设计和应用
+- ✅ CSS3 动画和过渡效果
+- ✅ 主题切换系统实现
+- ✅ LocalStorage 数据持久化
+- ✅ 模块化代码架构设计
+
+## 🖼️ 项目资源
+
+### 📁 文件结构
+
+```text
+coze/
+├── public/
+│   ├── favicon.ico          # 备用 ICO 图标
+│   ├── favicon.svg          # SVG 网站图标 (32x32)
+│   └── manifest.json        # PWA 配置文件
+├── src/
+│   └── assets/
+│       ├── ai-assistant-logo.svg    # 主要 Logo (40x40)
+│       ├── base.css                 # 基础样式
+│       └── main.css                 # 主样式
+└── src/
+    ├── App.vue              # 主应用组件
+    └── main.ts              # 入口文件
+```
+
+### 🎨 图标设计
+
+#### 主要 Logo (ai-assistant-logo.svg)
+
+- **尺寸**: 40x40 像素
+- **格式**: SVG 矢量图
+- **特点**:
+  - 渐变色彩设计
+  - 机器人形象
+  - 科技感十足
+- **用途**: 应用主标识
+
+#### Favicon (favicon.svg)
+
+- **尺寸**: 32x32 像素
+- **格式**: SVG 矢量图
+- **特点**:
+  - 简化版机器人设计
+  - 适合小尺寸显示
+  - 网页标签页图标
+- **用途**: 网站 Favicon
 
 ## 🎯 项目特点
 
 ### 代码质量
 
-- 完整的 TypeScript 类型支持
-- ESLint 代码规范检查
-- 现代化的 Vue 3 开发模式
-- 清晰的项目结构和组件分离
+- ✅ 完整的 TypeScript 类型支持
+- ✅ ESLint 代码规范检查
+- ✅ 现代化的 Vue 3 开发模式
+- ✅ 清晰的项目结构和组件分离
 
 ### 用户体验
 
-- 精确到毫秒的时间显示
-- 优雅的加载状态和错误处理
-- PC 端优化的界面设计
-- 流畅的动画和过渡效果
+- ✅ 精确到毫秒的时间显示
+- ✅ 优雅的加载状态和错误处理
+- ✅ PC 端优化的界面设计
+- ✅ 流畅的动画和过渡效果
+- ✅ 自定义 SVG 图标和品牌设计
 
 ### 开发体验
 
-- 热模块替换（HMR）
-- 类型检查和自动补全
-- 优化的构建配置
-- 统一的包管理器配置
+- ✅ 热模块替换（HMR）
+- ✅ 类型检查和自动补全
+- ✅ 优化的构建配置
+- ✅ 统一的包管理器配置 (pnpm)
+- ✅ 完整的 Favicon 和 PWA 支持
 
 ## 📖 学习建议
 
@@ -177,6 +323,23 @@ VITE_API_KEY=your_api_key_here
 - [pnpm 文档](https://pnpm.io/)
 - [Coze API 文档](https://www.coze.com/docs/developer_guides/api_overview)
 
+## 📸 媒体资源
+
+### 图片使用说明
+
+- **🎨 自定义设计**: 所有 SVG 图标均为手工设计，具有独特的科技感
+- **📱 多尺寸支持**: 提供了主要 Logo 和 Favicon 两种尺寸
+- **🌐 网站优化**: SVG 格式确保在任何分辨率下都保持清晰
+- **🔧 易于定制**: SVG 文件可以轻松修改颜色和样式
+
+### 资源文件
+
+1. **主要 Logo**: [`coze/src/assets/ai-assistant-logo.svg`](coze/src/assets/ai-assistant-logo.svg)
+2. **Favicon**: [`coze/public/favicon.svg`](coze/public/favicon.svg)
+3. **备用图标**: `coze/public/favicon.ico`
+
 ---
 
 > 💡 **提示**: 这些项目主要用于学习前端开发和 AI 应用集成。请根据实际需求调整和优化代码。
+>
+> 🎨 **设计灵感**: SVG 图标设计参考了现代 UI 趋势，结合了 Ant Design 的色彩体系和科技感设计元素。
