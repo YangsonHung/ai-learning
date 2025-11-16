@@ -184,7 +184,7 @@ onUnmounted(() => {
     <!-- 页脚 -->
     <footer class="app-footer">
       <div class="footer-content">
-        <p>&copy; 2024 AI 助手. 智能对话，精彩生活.</p>
+        <p>&copy; 2025 AI 助手. 智能对话，精彩生活.</p>
         <div class="footer-links">
           <a href="#" class="footer-link">隐私政策</a>
           <a href="#" class="footer-link">使用条款</a>
