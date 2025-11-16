@@ -105,8 +105,8 @@ onUnmounted(() => {
     <header class="app-header">
       <div class="header-content">
         <div class="logo-section">
-          <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="40" height="40" />
-          <h1 class="app-title">AI 助手</h1>
+          <img alt="AI Assistant Logo" class="logo" src="@/assets/ai-assistant-logo.svg" width="40" height="40" />
+          <h1 class="app-title">AI 智能助手</h1>
         </div>
 
         <!-- 时间显示 -->
@@ -122,9 +122,9 @@ onUnmounted(() => {
       <!-- 欢迎组件 -->
       <section class="welcome-section">
         <div class="welcome-content">
-          <h2 class="welcome-title">欢迎使用 AI 助手</h2>
+          <h2 class="welcome-title">欢迎使用 AI 智能助手</h2>
           <p class="welcome-description">
-            这是一个智能对话助手，基于先进的 AI 技术，为您提供专业的问答服务
+            这是一个基于先进 AI 技术的智能对话助手，为您提供专业的问答服务
           </p>
         </div>
       </section>
@@ -184,7 +184,7 @@ onUnmounted(() => {
     <!-- 页脚 -->
     <footer class="app-footer">
       <div class="footer-content">
-        <p>&copy; 2025 AI 助手. 智能对话，精彩生活.</p>
+        <p>&copy; 2025 AI 智能助手. 智能对话，精彩生活.</p>
         <div class="footer-links">
           <a href="#" class="footer-link">隐私政策</a>
           <a href="#" class="footer-link">使用条款</a>
@@ -203,13 +203,14 @@ onUnmounted(() => {
 
 /* 顶部导航栏 */
 .app-header {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #1890ff 0%, #096dd9 100%);
   color: white;
   padding: 1rem 0;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(24, 144, 255, 0.15);
   position: sticky;
   top: 0;
   z-index: 100;
+  backdrop-filter: blur(8px);
 }
 
 .header-content {
@@ -264,13 +265,31 @@ onUnmounted(() => {
 /* 主要内容区域 */
 .app-main {
   flex: 1;
-  background-color: #f8f9fa;
+  background: linear-gradient(135deg, #f0f5ff 0%, #e6f7ff 50%, #f0f5ff 100%);
+  position: relative;
+}
+
+.app-main::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    radial-gradient(circle at 20% 80%, rgba(24, 144, 255, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(64, 169, 255, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(105, 192, 255, 0.02) 0%, transparent 50%);
+  pointer-events: none;
 }
 
 .welcome-section {
-  background: white;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
   padding: 2rem 0;
-  border-bottom: 1px solid #e9ecef;
+  border-bottom: 1px solid rgba(24, 144, 255, 0.1);
+  position: relative;
+  z-index: 1;
 }
 
 .welcome-content {
@@ -305,11 +324,16 @@ onUnmounted(() => {
 .chat-container {
   max-width: 900px;
   margin: 0 auto;
-  background: white;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
   border-radius: 16px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  box-shadow:
+    0 20px 40px rgba(24, 144, 255, 0.08),
+    0 8px 16px rgba(0, 0, 0, 0.04);
   overflow: hidden;
-  border: 1px solid #e9ecef;
+  border: 1px solid rgba(24, 144, 255, 0.1);
+  position: relative;
+  z-index: 1;
 }
 
 .chat-header {
@@ -370,8 +394,8 @@ onUnmounted(() => {
 
 .chat-input:focus {
   outline: none;
-  border-color: #667eea;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  border-color: #1890ff;
+  box-shadow: 0 0 0 3px rgba(24, 144, 255, 0.1);
 }
 
 .chat-input:disabled {
@@ -393,7 +417,7 @@ onUnmounted(() => {
 
 .send-button {
   padding: 0.875rem 2.5rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #1890ff 0%, #40a9ff 100%);
   color: white;
   border: none;
   border-radius: 10px;
@@ -406,12 +430,30 @@ onUnmounted(() => {
   gap: 0.75rem;
   min-width: 140px;
   justify-content: center;
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 4px 15px rgba(24, 144, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.send-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s;
+}
+
+.send-button:hover::before {
+  left: 100%;
 }
 
 .send-button:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 8px 20px rgba(24, 144, 255, 0.4);
+  background: linear-gradient(135deg, #40a9ff 0%, #69c0ff 100%);
 }
 
 .send-button:disabled {
@@ -473,8 +515,19 @@ onUnmounted(() => {
   line-height: 1.8;
   font-size: 1rem;
   color: #495057;
-  border-left: 4px solid #667eea;
+  border-left: 4px solid #1890ff;
   margin: 0;
+  position: relative;
+}
+
+.response-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #1890ff 0%, #40a9ff 100%);
 }
 
 .loading-indicator {
