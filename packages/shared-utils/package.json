@@ -1,0 +1,29 @@
+{
+  "name": "@ai-learning/shared-utils",
+  "version": "0.0.0",
+  "description": "Shared utility functions for AI Learning applications",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@ai-learning/shared-types": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "~5.9.0"
+  }
+}

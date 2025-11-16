@@ -23,7 +23,7 @@ export default defineConfig(({ mode }) => {
                 output: {
                     // 代码分割
                     manualChunks: {
-                        vendor: ['vue', 'react'], // 如果有的话
+                        vendor: [], // 根据实际依赖添加
                     },
                     // 资源文件命名
                     assetFileNames: 'assets/[name]-[hash][extname]',

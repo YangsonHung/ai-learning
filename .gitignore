@@ -7,10 +7,24 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Dependencies
 node_modules
+**/node_modules
+
+# Build outputs
 dist
 dist-ssr
+**/dist
+**/dist-ssr
+
+# Local files
 *.local
+**/.local
+
+# Cache directories
+.pnpm-store
+.turbo
+.changeset
 
 # Editor directories and files
 .vscode/*

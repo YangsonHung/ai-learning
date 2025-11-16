@@ -1,6 +1,6 @@
 # AI 学习项目集
 
-> 🎓 这是一个用于学习前端和 AI 应用开发的项目集合，仅供学习参考使用。
+> 🎓 这是一个用于学习前端和 AI 应用开发的项目集合，采用 Monorepo 架构，仅供学习参考使用。
 
 ## 🎨 项目预览
 
@@ -8,11 +8,11 @@
 
 #### 🤖 AI 智能助手 - 主要 Logo
 
-![AI Assistant Logo](coze/src/assets/ai-assistant-logo.svg)
+![AI Assistant Logo](apps/coze/src/assets/ai-assistant-logo.svg)
 
 #### 🔖 Favicon - 网站图标
 
-![Favicon](coze/public/favicon.svg)
+![Favicon](apps/coze/public/favicon.svg)
 
 ### 项目界面效果
 
@@ -42,13 +42,29 @@
 - ⚡ 快速的开发体验
 - 📚 完善的开发工具配置
 
-## 📁 项目结构
+## 📚 文档
+
+- 📖 [Monorepo 工作原理详解](docs/monorepo-guide.md) - 深入了解 monorepo 的工作机制
+- 🚀 [Monorepo 快速入门](docs/quick-start.md) - 简洁的入门指南
+
+## 📁 项目结构 (Monorepo)
 
 ```text
-ai-learning/
-├── coze/          # 基于 Coze API 的 AI 助手应用
-├── deepseek/      # 基于 DeepSeek API 的 AI 对话应用
-└── README.md      # 本文档
+ai-learning/                          # 根目录
+├── apps/                              # 应用程序
+│   ├── coze/                         # 基于 Coze API 的 AI 助手应用
+│   └── deepseek/                     # 基于 DeepSeek API 的 AI 对话应用
+├── packages/                          # 共享包
+│   ├── shared-ui/                    # 共享 UI 组件
+│   ├── shared-utils/                 # 共享工具函数
+│   ├── shared-types/                 # 共享 TypeScript 类型
+│   └── shared-config/                # 共享配置文件
+├── package.json                      # 根 package.json
+├── pnpm-workspace.yaml               # pnpm 工作区配置
+├── tsconfig.json                     # TypeScript 根配置
+├── eslint.config.js                  # ESLint 配置
+├── .prettierrc                       # Prettier 配置
+└── README.md                         # 本文档
 ```
 
 ## 🚀 包含的项目
@@ -57,7 +73,7 @@ ai-learning/
 
 <div align="center">
 
-![AI Assistant Logo](coze/src/assets/ai-assistant-logo.svg)
+![AI Assistant Logo](apps/coze/src/assets/ai-assistant-logo.svg)
 
 **基于 Coze API 的现代化智能对话助手**
 
@@ -97,12 +113,20 @@ ai-learning/
 
 ## 🛠️ 技术栈
 
+### Monorepo 基础设施
+
+- **工作区管理**: pnpm workspace
+- **包管理**: pnpm 10.20.0+
+- **代码共享**: 共享组件、工具和类型
+- **统一构建**: 并行构建和依赖优化
+- **代码规范**: 统一的 ESLint 和 Prettier 配置
+
 ### 通用技术
 
 - **构建工具**: Vite 7.1+
-- **包管理器**: pnpm 10.20.0+
 - **代码风格**: Prettier + ESLint
 - **环境管理**: Node.js 20.19.0+
+- **类型支持**: TypeScript 5.9+
 
 ### 项目专用技术
 
@@ -136,36 +160,36 @@ npx pnpm add -g pnpm
 
 ### 运行项目
 
-#### coze 项目
+#### 一键启动所有应用
 
 ```bash
-# 进入项目目录
-cd coze
-
-# 安装依赖
+# 在根目录安装所有依赖
 pnpm install
 
-# 启动开发服务器
+# 启动所有应用的开发服务器
 pnpm dev
 
-# 构建生产版本
+# 构建所有应用和包
 pnpm build
 
-# 预览构建结果
-pnpm preview
+# 格式化所有代码
+pnpm format
+
+# 代码检查
+pnpm lint
 ```
 
-#### deepseek 项目
+#### 单独运行应用
 
 ```bash
-# 进入项目目录
-cd deepseek
+# 只运行 coze 应用
+pnpm --filter @ai-learning/coze dev
 
-# 安装依赖
-pnpm install
+# 只运行 deepseek 应用
+pnpm --filter @ai-learning/deepseek dev
 
-# 启动开发服务器
-pnpm dev
+# 构建特定包
+pnpm --filter @ai-learning/shared-ui build
 ```
 
 ## 🔧 开发工具
@@ -223,6 +247,41 @@ VITE_API_KEY=your_api_key_here
 - ✅ 主题切换系统实现
 - ✅ LocalStorage 数据持久化
 - ✅ 模块化代码架构设计
+
+### Monorepo 优势
+
+- ✅ **代码复用**: 共享 UI 组件、工具函数和类型定义
+- ✅ **依赖管理**: 统一的依赖版本管理和去重
+- ✅ **开发效率**: 一次安装，同时开发多个应用
+- ✅ **构建优化**: 共享构建缓存，并行构建
+- ✅ **代码规范**: 统一的代码风格和质量检查
+- ✅ **类型安全**: 跨项目的 TypeScript 类型共享
+
+### 共享包说明
+
+#### @ai-learning/shared-types
+
+- **用途**: 共享 TypeScript 类型定义
+- **包含**: API 响应类型、组件 Props 类型、工具类型
+- **使用**: 所有应用和包都可导入使用
+
+#### @ai-learning/shared-utils
+
+- **用途**: 通用工具函数库
+- **包含**: 存储、日期、字符串、主题、API 等工具函数
+- **特点**: 纯函数、类型安全、无副作用
+
+#### @ai-learning/shared-ui
+
+- **用途**: Vue 3 UI 组件库
+- **包含**: 按钮、输入框、聊天消息、加载动画等组件
+- **特性**: 响应式设计、主题支持、TypeScript 支持
+
+#### @ai-learning/shared-config
+
+- **用途**: 共享配置文件
+- **包含**: 构建配置、代码规范配置
+- **目标**: 统一开发标准和工具配置
 
 ## 🖼️ 项目资源
 

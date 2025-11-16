@@ -1,0 +1,36 @@
+{
+  "name": "@ai-learning/shared-ui",
+  "version": "0.0.0",
+  "description": "Shared UI components for AI Learning applications",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./style.css": "./dist/style.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite build --watch",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@ai-learning/shared-types": "workspace:*",
+    "@ai-learning/shared-utils": "workspace:*"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.1",
+    "vite": "^7.1.11",
+    "typescript": "~5.9.0"
+  },
+  "peerDependencies": {
+    "vue": "^3.0.0"
+  }
+}

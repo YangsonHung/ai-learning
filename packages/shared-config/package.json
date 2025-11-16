@@ -1,0 +1,13 @@
+{
+  "name": "@ai-learning/shared-config",
+  "version": "0.0.0",
+  "description": "Shared configuration files for AI Learning applications",
+  "private": true,
+  "type": "module",
+  "files": [
+    "*"
+  ],
+  "scripts": {
+    "lint": "eslint . --fix --cache"
+  }
+}

@@ -1,0 +1,22 @@
+{
+    "name": "@ai-learning/deepseek",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview",
+        "format": "prettier --write .",
+        "format:check": "prettier --check ."
+    },
+    "devDependencies": {
+        "prettier": "^3.6.2",
+        "vite": "^7.1.7"
+    },
+    "engines": {
+        "node": "^20.19.0 || >=22.12.0",
+        "pnpm": ">=8.0.0"
+    },
+    "packageManager": "pnpm@10.20.0"
+}
