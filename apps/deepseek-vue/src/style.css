@@ -1,0 +1,409 @@
+/* 重置和基础样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #64748b;
+    --accent-color: #3b82f6;
+    --text-color: #1f2937;
+    --text-light: #6b7280;
+    --bg-color: #ffffff;
+    --bg-secondary: #f8fafc;
+    --border-color: #e5e7eb;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --border-radius: 12px;
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family:
+        'Inter',
+        system-ui,
+        -apple-system,
+        sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* 导航栏样式 */
+.navbar {
+    background: var(--bg-color);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* 主题切换器样式 */
+.theme-switcher {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.theme-btn {
+    background: transparent;
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    color: var(--text-color);
+}
+
+.theme-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+.theme-btn.active {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+/* 主内容区域 */
+.main-content {
+    min-height: calc(100vh - 200px);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* DeepSeek页面样式 */
+.deepseek-section {
+    padding: 4rem 2rem;
+    background: var(--bg-secondary);
+    min-height: calc(100vh - 200px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.deepseek-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.deepseek-content h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.deepseek-content p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.8;
+}
+
+/* 开始对话按钮样式 */
+.start-chat-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 1.25rem 2.5rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+}
+
+.start-chat-btn:hover {
+    background: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.deepseek-card {
+    background: var(--bg-color);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+/* 多行文本输入框样式 */
+.deepseek-input-container {
+    margin-bottom: 1.5rem;
+}
+
+.deepseek-textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-family: inherit;
+    font-size: 1rem;
+    resize: vertical;
+    transition: var(--transition);
+    margin-bottom: 1rem;
+}
+
+.deepseek-textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.send-message-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 600;
+}
+
+.send-message-btn:hover {
+    background: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.send-message-btn:disabled {
+    background: var(--border-color);
+    cursor: not-allowed;
+    transform: none;
+}
+
+.deepseek-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.deepseek-header h4 {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin: 0;
+}
+
+.loading-indicator {
+    display: flex;
+    gap: 4px;
+}
+
+.loading-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    animation: loading-bounce 1.5s infinite;
+}
+
+.loading-dot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.loading-dot:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes loading-bounce {
+    0%,
+    100% {
+        transform: translateY(0);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translateY(-6px);
+        opacity: 1;
+    }
+}
+
+.deepseek-response {
+    min-height: 100px;
+    line-height: 1.6;
+}
+
+.close-deepseek {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.close-deepseek:hover {
+    background: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+/* 页脚 */
+.footer {
+    background: var(--text-color);
+    color: var(--bg-color);
+    text-align: center;
+    padding: 2rem;
+}
+
+/* Toast 样式 */
+.toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    z-index: 1000;
+    animation: slideIn 0.3s ease;
+    color: white;
+}
+
+.toast-success {
+    background: #10b981;
+}
+
+.toast-error {
+    background: #ef4444;
+}
+
+.toast-info {
+    background: #3b82f6;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .deepseek-section {
+        padding: 2rem 1rem;
+    }
+
+    .deepseek-content h3 {
+        font-size: 2rem;
+    }
+
+    .deepseek-content p {
+        font-size: 1rem;
+    }
+
+    .start-chat-btn {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+}
+
+/* 亮色主题 */
+.theme-light {
+    --text-color: #1f2937;
+    --text-light: #6b7280;
+    --bg-color: #ffffff;
+    --bg-secondary: #f8fafc;
+    --border-color: #e5e7eb;
+}
+
+/* 暗色主题 */
+.theme-dark {
+    --text-color: #f8fafc;
+    --text-light: #94a3b8;
+    --bg-color: #0f172a;
+    --bg-secondary: #1e293b;
+    --border-color: #334155;
+}
+
+/* 系统主题偏好（默认） */
+@media (prefers-color-scheme: light) {
+    :root:not(.theme-light):not(.theme-dark) {
+        --text-color: #1f2937;
+        --text-light: #6b7280;
+        --bg-color: #ffffff;
+        --bg-secondary: #f8fafc;
+        --border-color: #e5e7eb;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not(.theme-light):not(.theme-dark) {
+        --text-color: #f8fafc;
+        --text-light: #94a3b8;
+        --bg-color: #0f172a;
+        --bg-secondary: #1e293b;
+        --border-color: #334155;
+    }
+}
