@@ -65,7 +65,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div id="app">
+  <div class="app">
     <!-- 导航栏 -->
     <nav class="navbar">
       <div class="nav-container">
